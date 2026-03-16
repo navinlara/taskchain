@@ -94,9 +94,25 @@
 function showDashboard() {
   document.querySelector('.card').innerHTML = `
     <h1>✅ Welcome to TaskChain!</h1>
-    <p>Available tasks:</p>
+    <p>Enter OTP to continue:</p>
+    <label>OTP (6 digits)</label>
+    <input id="otp" type="text" maxlength="6" />
+    <button onclick="completeLogin()">Verify OTP</button>
+  `;
+}
+function completeLogin() {
+  const otp = document.getElementById('otp').value;
+  if (otp.length !== 6) {
+    alert('Enter 6-digit OTP');
+    return;
+  }
+  alert('Login successful! Dashboard loading...');
+  // Show tasks
+  document.querySelector('.card').innerHTML = `
+    <h1>💼 Available Tasks</h1>
     <div style="margin: 16px 0;">
-      <div style="background: #f7fafc; padding
+      <div style="background: #f7fafc; padding: 12px; border-radius
+
   </script>
 </body>
 </html>

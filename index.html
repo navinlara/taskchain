@@ -97,7 +97,27 @@
   
   console.log("Firebase SDKs loaded successfully!");
     <script type="module">
-  import { initialize
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+  import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+  // Your firebaseConfig (keep exactly as you have it)
+  const firebaseConfig = {
+    // ... your config
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Phone login function
+  async function sendOtp() {
+    const phoneNumber = '+91' + document.getElementById('phone').value.trim();
+    if (!phoneNumber.match(/\+91[6-9]\d{9}$/)) {
+      alert('Enter valid Indian phone number');
+      return;
+    }
+
+    try {
+      const recaptchaVerifier
   </script>
 </body>
 </html>

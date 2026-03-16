@@ -91,32 +91,13 @@
     </div>
   </div>
   
-  <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app
-  
-  console.log("Firebase SDKs loaded successfully!");
-    <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-  import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-
-  // Your firebaseConfig (keep exactly as you have it)
-  const firebaseConfig = {
-    // ... your config
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  // Phone login function
-  async function sendOtp() {
-    const phoneNumber = '+91' + document.getElementById('phone').value.trim();
-    if (!phoneNumber.match(/\+91[6-9]\d{9}$/)) {
-      alert('Enter valid Indian phone number');
-      return;
-    }
-
-    try {
-      const recaptchaVerifier
+<script>
+function showDashboard() {
+  document.querySelector('.card').innerHTML = `
+    <h1>✅ Welcome to TaskChain!</h1>
+    <p>Available tasks:</p>
+    <div style="margin: 16px 0;">
+      <div style="background: #f7fafc; padding
   </script>
 </body>
 </html>
